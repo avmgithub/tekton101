@@ -18,7 +18,7 @@ spec:
       description: Digest of the image to be used.
   steps:
     - name: update-yaml
-      image: alpine
+      image: alpine:latest
       command: ["sed"]
       args:
         - "-i"
@@ -28,7 +28,7 @@ spec:
         - "s;__DIGEST__;$(params.imageDigest);g"
         - "$(workspaces.git-source.path)/$(params.pathToYamlFile)"
     - name: run-kubectl
-      image: lachlanevenson/k8s-kubectl
+      image: lachlanevenson/k8s-kubectl:latest
       command: ["kubectl"]
       args:
         - "apply"
