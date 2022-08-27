@@ -193,10 +193,10 @@ spec:
     - apiVersion: tekton.dev/v1beta1
       kind: PipelineRun
       metadata:
-        name: build-and-deploy-pipeline
+        name: code-engine-$(uid)
       spec:
         pipelineRef:
-          name: build-and-deploy-pipeline
+          name: code-engine-pipeline
         params:
           - name: ibmcloud-api
             value: $(params.ibmcloud-api)
