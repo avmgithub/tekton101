@@ -6,7 +6,7 @@ spec:
   pipelineRef:
     name: build-and-deploy-pipeline
   params:
-    - name: gitUrl
+    - name: repository
       value: https://github.com/ibm/tekton-tutorial-openshift/
     - name: pathToYamlFile
       value: kubernetes/picalc.yaml
